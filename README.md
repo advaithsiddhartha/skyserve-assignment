@@ -2,8 +2,6 @@
 
 <div align="center">
 
-**ML Engineer Assessment — Skyserve**
-*Candidate: Advaith | Referred by: Mr. Vishesh Vatsal*
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue?logo=python)](https://python.org)
 [![YOLOv8](https://img.shields.io/badge/model-YOLOv8m-green?logo=pytorch)](https://github.com/ultralytics/ultralytics)
