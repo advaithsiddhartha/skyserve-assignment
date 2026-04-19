@@ -330,10 +330,6 @@ oil_tank_detector/
 
 ---
 
-<div align="center">
-<sub>Advaith · ML Engineer Assessment · Skyserve · Referred by Vishesh Vatsal</sub>
-</div>
-
 ---
 
 ## Baseline Comparison: YOLOv5 vs YOLOv8
