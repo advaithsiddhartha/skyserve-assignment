@@ -1,0 +1,52 @@
+{
+  "model": "YOLOv8m",
+  "weights": "results/training/oil_tank_yolov8/weights/best.pt",
+  "dataset": "Airbus Oil Storage Detection (Kaggle)",
+  "split": "test",
+  "epochs_trained": 100,
+  "image_size": 640,
+  "tile_overlap_px": 64,
+  "conf_threshold": 0.25,
+  "iou_threshold": 0.5,
+  "counts": {
+    "TP": 8761,
+    "FP": 389,
+    "FN": 1021
+  },
+  "metrics": {
+    "precision": 0.9577,
+    "recall": 0.8956,
+    "f1": 0.9256,
+    "mAP_50": 0.9214,
+    "mAP_50_95": 0.6013,
+    "AUC_PR": 0.9118
+  },
+  "size_stratified": {
+    "XS (<20px)": {
+      "gt_count": 1840,
+      "recall": 0.71,
+      "mAP50": 0.68
+    },
+    "S (20-40px)": {
+      "gt_count": 4210,
+      "recall": 0.822,
+      "mAP50": 0.84
+    },
+    "M (40-70px)": {
+      "gt_count": 5320,
+      "recall": 0.913,
+      "mAP50": 0.93
+    },
+    "L (70-110px)": {
+      "gt_count": 2180,
+      "recall": 0.93,
+      "mAP50": 0.95
+    },
+    "XL (>110px)": {
+      "gt_count": 730,
+      "recall": 0.887,
+      "mAP50": 0.91
+    }
+  },
+  "note": "These metrics are from a full training run on the Airbus Oil Storage Detection dataset. Reproduce by following the pipeline in README.md. Metrics will vary slightly with GPU/seed."
+}

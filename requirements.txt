@@ -1,0 +1,33 @@
+# Oil Storage Tank Detection — YOLOv8
+# Tested on Python 3.10+
+
+# Core
+ultralytics==8.2.18
+torch>=2.1.0
+torchvision>=0.16.0
+
+# Data
+numpy>=1.24.0
+pandas>=2.0.0
+Pillow>=10.0.0
+opencv-python>=4.8.0
+scikit-learn>=1.3.0
+
+# Augmentation
+albumentations>=1.3.1
+
+# Geometry / annotation
+shapely>=2.0.0
+pycocotools>=2.0.7
+
+# Visualization & analysis
+matplotlib>=3.7.0
+seaborn>=0.12.0
+tqdm>=4.65.0
+
+# Dataset
+kaggle>=1.5.16
+
+# Notebook (optional)
+jupyterlab>=4.0.0
+ipywidgets>=8.0.0

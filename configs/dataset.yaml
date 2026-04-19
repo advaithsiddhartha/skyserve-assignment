@@ -1,0 +1,23 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Oil Storage Tank Detection — Dataset Configuration
+# Dataset : Airbus Oil Storage Detection
+# Source  : https://www.kaggle.com/datasets/airbusgeo/airbus-oil-storage-detection-dataset
+# License : Creative Commons BY-NC-SA
+# ─────────────────────────────────────────────────────────────────────────────
+
+path: ./data/processed   # relative to project root
+
+train: images/train
+val:   images/val
+test:  images/test
+
+# Classes
+nc: 1
+names:
+  0: oil-storage-tank
+
+# ── Dataset statistics (post-tiling at 640×640, overlap=64) ─────────────────
+# Original images  : 98 SPOT scenes at ~1.2 m/px, 2560×2560 px
+# Annotated tanks  : ~13,500 bounding boxes worldwide
+# Tiles (approx.)  : ~1,600 tiles total after tiling
+# Split (70/20/10) : ~1,120 train / ~320 val / ~160 test

@@ -1,0 +1,52 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Oil Storage Tank Detection — Training Hyperparameters
+# Model: YOLOv8m (recommended) | YOLOv8n for quick validation
+# ─────────────────────────────────────────────────────────────────────────────
+
+model: yolov8m         # yolov8n / yolov8s / yolov8m / yolov8l / yolov8x
+epochs: 100
+patience: 20           # early stopping
+batch: 16              # reduce to 8 if GPU VRAM < 8 GB
+imgsz: 640
+seed: 42
+workers: 8
+
+# ── Optimizer ────────────────────────────────────────────────────────────────
+optimizer: AdamW
+lr0: 0.001             # initial learning rate
+lrf: 0.01              # final lr = lr0 * lrf
+momentum: 0.937
+weight_decay: 0.0005
+warmup_epochs: 3.0
+warmup_momentum: 0.8
+
+# ── Augmentation (satellite-specific) ────────────────────────────────────────
+# Oil tanks are circular and orientation-invariant from overhead view.
+# Strong rotation + flip augmentation is critical.
+hsv_h: 0.015           # hue shift (subtle — SPOT sensor is consistent)
+hsv_s: 0.5             # saturation (cloud/haze variation)
+hsv_v: 0.4             # brightness (sun angle / time of day)
+degrees: 90.0          # rotation — tanks look the same at any angle
+translate: 0.1
+scale: 0.6             # scale jitter — tanks range from 10 to 120+ px diameter
+shear: 0.0
+perspective: 0.0
+flipud: 0.5            # vertical flip (overhead: no gravity direction)
+fliplr: 0.5            # horizontal flip
+mosaic: 1.0            # mosaic augmentation — improves small object detection
+mixup: 0.15
+copy_paste: 0.15       # copy-paste — augments sparse/empty regions
+
+# ── Loss weights ─────────────────────────────────────────────────────────────
+box: 7.5
+cls: 0.5
+dfl: 1.5
+
+# ── NMS at inference ─────────────────────────────────────────────────────────
+conf: 0.25
+iou: 0.45
+max_det: 300
+
+# ── Hardware ─────────────────────────────────────────────────────────────────
+# device: 0          # GPU index; 'cpu' for CPU; auto-detected if omitted
+amp: true            # automatic mixed precision (faster on modern GPUs)

@@ -1,0 +1,21 @@
+# Dataset (download via prepare_data.py --download)
+data/raw/
+data/processed/
+
+# Model weights (too large for git — upload to releases or HuggingFace)
+results/training/
+*.pt
+*.onnx
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Runtime config (auto-generated)
+configs/_runtime_dataset.yaml
